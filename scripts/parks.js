@@ -35,7 +35,7 @@ function getLocation() {
 //         break;
 
 //     }
-// }
+
 //event listener ---
 locationsArrayList.onchange = onStateChanged;
 
@@ -72,13 +72,53 @@ searchBtn.addEventListener('click',getNationalParks);
     }  
     // displayArray =  document.getElementById('displayState').innerHTML
     // console.log(displayArray);
+    let table = document.getElementById("tableBody");
+    for(let i = 0; i < matching.length; i++){
+        let tr = document.createElement("tr");
+        let td1 = document.createElement("td");
+        td1.innerText = matching[i].LocationID;
+        tr.appendChild(td1);
+        let td2 = document.createElement("td");
+        td2.innerText = matching[i].LocationName;
+        tr.appendChild(td2);
+        let td3 = document.createElement("td");
+        td3.innerText = matching[i].Address;
+        tr.appendChild(td3);
+        let td4 = document.createElement("td");
+        td4.innerText = matching[i].City;
+        tr.appendChild(td4);
+        let td5 = document.createElement("td");
+        td5.innerText = matching[i].State;
+        tr.appendChild(td5);
+        let td6 = document.createElement("td");
+        td6.innerText = matching[i].ZipCode;
+        tr.appendChild(td6);
+        let td7 = document.createElement("td");
+        td7.innerText = matching[i].Phone;
+        tr.appendChild(td7);
+        let td8 = document.createElement("td");
+        td8.innerText = matching[i].Fax;
+        tr.appendChild(td8);
+        let td9 = document.createElement("td");
+        td9.innerText = matching[i].Latitude;
+        tr.appendChild(td9);
+        let td10 = document.createElement("td");
+        td10.innerText = matching[i].Longitude;
+        tr.appendChild(td10);
+        let td11 = document.createElement("td");
+        td11.innerText = matching[i].Location.coordinates;
+        tr.appendChild(td11);
+        let td12 = document.createElement("td");
+        td12.innerText = matching[i].Location.type;
+        tr.appendChild(td12);
+        table.appendChild(tr);
+    }
+
+
     console.log(matching) ;
     return matching;  
     
 }
-
-//  let locationName = getNationalParks(nationalParksArray,"Kentucky")
-//  console.log(locationName)
 
 
 
@@ -139,7 +179,9 @@ function getParksType(){
 
       
  }
-   
+
  
 }
+
+
 
