@@ -2,7 +2,7 @@
 window.onload = function () {
 
     // declare the html elements that we need
-    let locationsNameList = document.getElementById('locationName');
+    let locationsNameList = document.getElementById('parksTypesList');
     // console.log(`the select state is ${locationsNameList}`);
     
     
@@ -20,6 +20,9 @@ function getParkType() {
     let parkType= locationsNameList.options[locationsNameList.selectedIndex].text;
     console.log(locationsNameList.options[locationsNameList.selectedIndex]);
     alert(`You slected ${parkType}`);
+    console.log(` you selected ${parkType}`)
+    return parkType;
 
 }
+
 }

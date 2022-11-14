@@ -1,5 +1,5 @@
  //getting states dropdown
- window.onload = function () {
+window.onload = function () {
 
 // declare the html elements that we need
 let locationsArrayList = document.getElementById('locationList');
@@ -22,7 +22,8 @@ function getLocation() {
     // this sets a variable called stateName that is set to the option/state that the user selected in the dropdown menu
     let stateName= locationsArrayList.options[locationsArrayList.selectedIndex].text;
     console.log(locationsArrayList.options[locationsArrayList.selectedIndex]);
-    alert(`You slected ${stateName}`);
+    // alert(`You slected ${stateName}`);
+    return stateName;
 
 }
 
@@ -47,7 +48,7 @@ function onStateChanged() {
     return selectedState;
 }
 
- //getting national park data
+ //getting national park data for search by location
  
  //add html element
  const searchBtn = document.getElementById('btn3');
@@ -78,4 +79,67 @@ searchBtn.addEventListener('click',getNationalParks);
 
 //  let locationName = getNationalParks(nationalParksArray,"Kentucky")
 //  console.log(locationName)
+
+
+
+//  for park type--------------------------
+
+
+ // declare the html elements that we need
+ let locationsNameList = document.getElementById('parksTypesList');
+ // console.log(`the select state is ${locationsNameList}`);
+ 
+ 
+ let Arraylength = parkTypesArray.length;;
+ console.log(`number of parks: ${Arraylength}`);
+ for(let i = 0; i < Arraylength; i++) {
+     let theOption = new Option(parkTypesArray[i]);
+     locationsNameList.appendChild(theOption);
  }
+ // add an event handler to handle the event on the button
+function getParkType() {
+ console.log('button works');
+
+
+ let parkType= locationsNameList.options[locationsNameList.selectedIndex].text;
+ console.log(locationsNameList.options[locationsNameList.selectedIndex]);
+ alert(`You slected ${parkType}`);
+ console.log(` you selected ${parkType}`)
+ return parkType;
+
+}
+//event listener ---
+locationsNameList.onchange = onParkChanged;
+// event handler
+function onParkChanged() {
+    console.log('change event handler works');
+    let selectedPark = locationsNameList.value;
+   
+    console.log(`you changed your parks to ${selectedPark}`)
+    return selectedPark;
+}
+ //getting national park data for search by park type
+ 
+ //add html element
+ const searchBtn1 = document.getElementById('btn4');
+ const parkTypesArrayList = document.getElementById('locationName');
+
+ 
+//add event listener
+searchBtn1.addEventListener('click',getParksType);
+
+function getParksType(){
+    let getParks =  onParkChanged();
+    console.log(`you selected ${getParks}`)
+
+        let findLocationName = nationalParksArray.filter((arrayValueType) =>
+          arrayValueType.LocationName.includes(getParks)
+        );
+      console.log(findLocationName);
+
+      
+ }
+   
+ 
+}
+
