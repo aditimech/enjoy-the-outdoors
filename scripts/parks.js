@@ -69,6 +69,8 @@ searchBtn.addEventListener('click',getNationalParks);
      matching.push(nationalParksArray[i])
     }
     }  
+    // displayArray =  document.getElementById('displayState').innerHTML
+    // console.log(displayArray);
     console.log(matching) ;
     return matching;  
     
