@@ -23,6 +23,10 @@ function getLocation() {
     let stateName= locationsArrayList.options[locationsArrayList.selectedIndex].text;
     console.log(locationsArrayList.options[locationsArrayList.selectedIndex]);
     // alert(`You slected ${stateName}`);
+    let tableBody = document.getElementById("tableBody");
+
+    // tableBody.innerHTML = "";
+    // GetAllFilteredData(value);
     return stateName;
 
 }
@@ -33,8 +37,8 @@ function getLocation() {
 //     if (locationsArrayList.options[i].value == itemToDelete) {
 //         [locationsArrayList.selectedIndex].remove(i);
 //         break;
+// }
 
-//     }
 
 //event listener ---
 locationsArrayList.onchange = onStateChanged;
@@ -143,7 +147,6 @@ function getParkType() {
 
  let parkType= locationsNameList.options[locationsNameList.selectedIndex].text;
  console.log(locationsNameList.options[locationsNameList.selectedIndex]);
- alert(`You slected ${parkType}`);
  console.log(` you selected ${parkType}`)
  return parkType;
 
@@ -176,6 +179,46 @@ function getParksType(){
           arrayValueType.LocationName.includes(getParks)
         );
       console.log(findLocationName);
+      for(let i = 0; i < findLocationName.length; i++){
+        let tr = document.createElement("tr");
+        let td1 = document.createElement("td");
+        td1.innerText = findLocationName[i].LocationID;
+        tr.appendChild(td1);
+        let td2 = document.createElement("td");
+        td2.innerText = findLocationName[i].LocationName;
+        tr.appendChild(td2);
+        let td3 = document.createElement("td");
+        td3.innerText = findLocationName[i].Address;
+        tr.appendChild(td3);
+        let td4 = document.createElement("td");
+        td4.innerText = findLocationName[i].City;
+        tr.appendChild(td4);
+        let td5 = document.createElement("td");
+        td5.innerText = findLocationName[i].State;
+        tr.appendChild(td5);
+        let td6 = document.createElement("td");
+        td6.innerText = findLocationName[i].ZipCode;
+        tr.appendChild(td6);
+        let td7 = document.createElement("td");
+        td7.innerText = findLocationName[i].Phone;
+        tr.appendChild(td7);
+        let td8 = document.createElement("td");
+        td8.innerText = findLocationName[i].Fax;
+        tr.appendChild(td8);
+        let td9 = document.createElement("td");
+        td9.innerText = findLocationName[i].Latitude;
+        tr.appendChild(td9);
+        let td10 = document.createElement("td");
+        td10.innerText = findLocationName[i].Longitude;
+        tr.appendChild(td10);
+        let td11 = document.createElement("td");
+        td11.innerText = findLocationName[i].Location.coordinates;
+        tr.appendChild(td11);
+        let td12 = document.createElement("td");
+        td12.innerText = findLocationName[i].Location.type;
+        tr.appendChild(td12);
+        table.appendChild(tr);
+      }
 
       
  }
