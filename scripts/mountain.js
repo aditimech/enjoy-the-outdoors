@@ -32,21 +32,45 @@ searchBtn2.addEventListener('click',getMountainInfo);
 
 function getMountainInfo() {
     let getMountain = onMountainChanged();
+    mountainsArrayList.onchange = () => {
+        tableBody.innerHTML = "";
+        console.log(tableBody.innerHTML);
+    
+      }
+    
     console.log(`get mountain is working ${getMountain}`);
     let matching = []; 
 
     let arrayLength = mountainsArray.length;
     for(i = 0; i < arrayLength; i++) {
+        console.log(mountainsArray[i]);
         if(mountainsArray[i].name == getMountain) {
             matching.push(mountainsArray[i])
         }
-    
+        console.log(matching);
+        
+    }
         let table = document.getElementById("tableBody");
         for(let i = 0; i < arrayLength; i++) {
             let tr = document.createElement("tr");
             let td1 = document.createElement("td");
-            td1.innerText = mountainsArray[i].name;
-            tr.appendChild(td1);
+            td1.innerText = matching[i].name;
+            tr.appendChild(td1);     
+            let td2 = document.createElement("td");
+            td2.innerText = matching[i].elevation;
+            tr.appendChild(td2);
+            let td3 = document.createElement("td");
+            td3.innerText = matching[i].effort;
+            tr.appendChild(td3);
+            let td5 = document.createElement("td");
+            td5.innerText = matching[i].desc;
+            tr.appendChild(td5);
+            let td6 = document.createElement("td");
+            td6.innerText = matching[i].coords.lat;
+            tr.appendChild(td6);
+            let td7 = document.createElement("td");
+            td7.innerText = matching[i].coords.lng;
+            tr.appendChild(td7);
             table.appendChild(tr);
         }
     }     
@@ -56,5 +80,4 @@ return getMountain;
 
 }
 
-}
 
