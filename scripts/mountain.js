@@ -1,83 +1,81 @@
 window.onload = function () {
-    //declare html elements
-    let mountainsArrayList = document.getElementById('mountainName');
-    console.log(`selected mountain is ${mountainsArrayList}`);
+  //declare html elements
+  let mountainsArrayList = document.getElementById("mountainName");
+  console.log(`selected mountain is ${mountainsArrayList}`);
 
-    let mtnArrayLength = mountainsArray.length;
-    console.log(`number of mountains is ${mtnArrayLength}`);
-    for(i = 0; i < mtnArrayLength; i++) {
-        let theOption = new Option(mountainsArray[i].name);
-        mountainsArrayList.appendChild(theOption)
-    }
-  
+  let mtnArrayLength = mountainsArray.length;
+  console.log(`number of mountains is ${mtnArrayLength}`);
+  for (i = 0; i < mtnArrayLength; i++) {
+    let theOption = new Option(mountainsArray[i].name);
+    // console.log(theOption);
+    mountainsArrayList.appendChild(theOption);
+  }
 
-//event listener
-mountainsArrayList.onchange = onMountainChanged;
+  //event listener
+  mountainsArrayList.onchange = onMountainChanged;
 
-//event handler
-function onMountainChanged() {
+  //event handler
+  function onMountainChanged() {
     console.log(`change event handler is working`);
-    let selectedMountain =mountainsArrayList.value;
+    let selectedMountain = mountainsArrayList.value;
 
-    console.log(`you changed your mountain to ${selectedMountain}`)
+    console.log(`you changed your mountain to ${selectedMountain}`);
     return selectedMountain;
-}
-// add html element
-const searchBtn2 =document.getElementById('btn5');
-const arrayList = document.getElementById('mountain');
+  }
+  // add html element
+  const searchBtn2 = document.getElementById("btn5");
+  const arrayList = document.getElementById("mountain");
 
-//add event listener
-searchBtn2.addEventListener('click',getMountainInfo);
+  //add event listener
+  searchBtn2.addEventListener("click", getMountainInfo);
 
-
-function getMountainInfo() {
+  function getMountainInfo() {
     let getMountain = onMountainChanged();
     mountainsArrayList.onchange = () => {
-        tableBody.innerHTML = "";
-        console.log(tableBody.innerHTML);
-    
-      }
-    
+      tableBody.innerHTML = "";
+      console.log(tableBody.innerHTML);
+    };
+
     console.log(`get mountain is working ${getMountain}`);
-    let matching = []; 
+    let matching = [];
 
     let arrayLength = mountainsArray.length;
-    for(i = 0; i < arrayLength; i++) {
-        console.log(mountainsArray[i]);
-        if(mountainsArray[i].name == getMountain) {
-            matching.push(mountainsArray[i])
-        }
-        console.log(matching);
-        
+    for (i = 0; i < arrayLength; i++) {
+      console.log(mountainsArray[i]);
+      if (mountainsArray[i].name == getMountain) {
+        matching.push(mountainsArray[i]);
+      }
+      console.log(matching);
     }
-        let table = document.getElementById("tableBody");
-        for(let i = 0; i < arrayLength; i++) {
-            let tr = document.createElement("tr");
-            let td1 = document.createElement("td");
-            td1.innerText = matching[i].name;
-            tr.appendChild(td1);     
-            let td2 = document.createElement("td");
-            td2.innerText = matching[i].elevation;
-            tr.appendChild(td2);
-            let td3 = document.createElement("td");
-            td3.innerText = matching[i].effort;
-            tr.appendChild(td3);
-            let td5 = document.createElement("td");
-            td5.innerText = matching[i].desc;
-            tr.appendChild(td5);
-            let td6 = document.createElement("td");
-            td6.innerText = matching[i].coords.lat;
-            tr.appendChild(td6);
-            let td7 = document.createElement("td");
-            td7.innerText = matching[i].coords.lng;
-            tr.appendChild(td7);
-            table.appendChild(tr);
-        }
-    }     
+    let table = document.getElementById("tableBody");
+    for (let i = 0; i < arrayLength; i++) {
+      let tr = document.createElement("tr");
+      let td1 = document.createElement("td");
+      td1.innerText = matching[i].name;
+      tr.appendChild(td1);
+      let td2 = document.createElement("td");
+      td2.innerText = matching[i].elevation;
+      tr.appendChild(td2);
+      let td3 = document.createElement("td");
+      td3.innerText = matching[i].effort;
+      tr.appendChild(td3);
+      let td5 = document.createElement("td");
+      td5.innerText = matching[i].desc;
+      tr.appendChild(td5);
+      let td6 = document.createElement("td");
+      td6.innerText = matching[i].coords.lat;
+      tr.appendChild(td6);
+      let td7 = document.createElement("td");
+      td7.innerText = matching[i].coords.lng;
+      tr.appendChild(td7);
+      let td8 = document.createElement("td");
+      let img8 = document.createElement("img")
+      img8.src = `/images/${matching[i].img}` 
+      td8.appendChild(img8)
+      tr.appendChild(td8);
+      table.appendChild(tr);
+    }
+  }
 
-console.log(getMountain);
-return getMountain;
 
-}
-
-
+};

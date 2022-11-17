@@ -3,11 +3,19 @@ main{
     font-family: Arial, Helvetica, sans-serif;
 }
 header{
-    background-color: lightblue;
+    background-color: rgb(110, 197, 110);
+
     font-family: Arial, Helvetica, sans-serif;
 }
 h1{
     text-align: center;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(110, 197, 110);
+
 }
 
   ul {

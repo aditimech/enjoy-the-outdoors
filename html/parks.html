@@ -6,124 +6,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>National Parks!</title>
     <link rel="stylesheet" href="/enjoy-the-outdoors/css/styles.css" />
-    
   </head>
   <body>
     <header>
-      <h1  style="background-color:rgb(159, 236, 159); text-align: center;">National Parks!</h1>
-     
+      <h1 style="background-color: rgb(159, 236, 159); text-align: center">
+        National Parks!
+      </h1>
+
       <nav>
         <ul>
-            <li><a href="/enjoy-the-outdoors/index.html">Home</a></li>
-            <li><a href="/enjoy-the-outdoors/html/parks.html">Explore National Parks</a></li>
-            <li><a href="/enjoy-the-outdoors/html/mountain.html">Explore Mountains</a></li>
-            <li><a href="/enjoy-the-outdoors/html/about.html">About</a></li>
-            <li><a href="/enjoy-the-outdoors/html/contact.html">Contact</a></li>
-          </ul>
-       
-    </nav>
+          <li><a href="/enjoy-the-outdoors/index.html">Home</a></li>
+          <li>
+            <a href="/enjoy-the-outdoors/html/parks.html"
+              >Explore National Parks</a
+            >
+          </li>
+          <li>
+            <a href="/enjoy-the-outdoors/html/mountain.html"
+              >Explore Mountains</a
+            >
+          </li>
+          <li><a href="/enjoy-the-outdoors/html/about.html">About</a></li>
+          <li><a href="/enjoy-the-outdoors/html/contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-     
-    
-    <!-- state dropdown -->
-    <h4>Search By Location</h4>
-    <select name="location" id="locationList">
-      <option name="nationalParks" id="nationalParks"></option>
-    </select>
-    <button id="btn3">Search</button>
-    <p id="displayState"></p>
+      <!-- state dropdown -->
+      <h4>By Location</h4>
+      <select name="location" id="locationList">
+        <option name="nationalParks" id="nationalParks"></option>
+      </select>
+      <button id="btn3">Get Details</button>
+      <p id="displayState"></p>
 
-        <!-- ParkType dropdown -->
-  <h4>Search By Park Type</h4>
-  <select name="parksTypes" id="parksTypesList">
-    <option name="locationName" id="locationName"></option>
-  </select>
-  <button id="btn4">Search</button>
+      <!-- ParkType dropdown -->
+      <h4>By Park Type</h4>
+      <select name="parksTypes" id="parksTypesList">
+        <option name="locationName" id="locationName"></option>
+      </select>
+      <button id="btn4">Get Details</button>
 
-   <!-- View all national Parks -->
-   <!-- <h3>View all National Parks</h3>
+      <!-- View all national Parks -->
+      <!-- <h3>View all National Parks</h3>
    <select name="allParks" id="allParks">
      <option name="getAll" id="getAll"></option>
    </select>
    <button id="btn4">Search</button> -->
 
-
-
-  <table  id="table" border="1" align="center" width="700">
-    <thead>
-        <th width="100">LocationID</th>
-        <th width="100">LocationName</th>
-        <th width="100">Address</th>
-        <th width="100">City</th>
-        <th width="100">State</th>
-        <th width="100">ZipCode</th>
-        <th width="100">Phone</th>
-        <th width="100">Fax</th>
-        <th width="100">Latitude</th>
-        <th width="100">Longitude</th>
-        <th width="100">coordinates</th>
-        <th width="100">type</th>
-    </thead>
-    <tbody id="tableBody">
-
-    </tbody>
-</table>
-
+      <table id="table" border="1" align="center" width="700">
+        <thead>
+          <th width="100">LocationID</th>
+          <th width="100">LocationName</th>
+          <th width="100">Address</th>
+          <th width="100">City</th>
+          <th width="100">State</th>
+          <th width="100">ZipCode</th>
+          <th width="100">Phone</th>
+          <th width="100">Fax</th>
+          <th width="100">Latitude</th>
+          <th width="100">Longitude</th>
+          <th width="100">coordinates</th>
+          <th width="100">type</th>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
     </main>
     <footer>
       <div class="footer">
-          <div class="container">
-              <div class="row">
-                  <div class="footer-col-1">
-                      <h3>Follow Us</h3>
-                      <img src="/enjoy-the-outdoors/images/fb-logo-3.png" width="50px" height="50px" alt="Fb logo">
-                      <img src="/enjoy-the-outdoors/images/instagram-icon.png" width="50px" height="50px" alt="Instagram logo">
-                      <img src="/enjoy-the-outdoors/images/twitter.png" width="50px" height="50px" alt="Twitter logo">
-                    
-                  </div>
-                  <div class="footer-col-2">
-                   
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae exercitationem iusto sit quaerat,
-                           mollitia placeat beatae cumque omnis maxime animi numquam dolores blanditiis odit! Eligendi aut numquam obcaecati tempora magnam.</p>
-                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora delectus saepe similique, commodi, 
-                              id molestias in doloribus vero eos esse ea a nostrum earum nulla ex voluptatibus modi omnis.</p>
-                  </div>
-                  
-              </div>
-              <hr>
-              <small>  &copy; 2022   Copyright - Explore OutDoors!</small>
+        <div class="container">
+          <div class="row">
+            <div class="footer-col-1">
+              <h3>Follow Us</h3>
+              <img
+                src="/enjoy-the-outdoors/images/fb-logo-3.png"
+                width="50px"
+                height="50px"
+                alt="Fb logo"
+              />
+              <img
+                src="/enjoy-the-outdoors/images/instagram-icon.png"
+                width="50px"
+                height="50px"
+                alt="Instagram logo"
+              />
+              <img
+                src="/enjoy-the-outdoors/images/twitter.png"
+                width="50px"
+                height="50px"
+                alt="Twitter logo"
+              />
+            </div>
+            <div class="footer-col-2">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae
+                exercitationem iusto sit quaerat, mollitia placeat beatae cumque
+                omnis maxime animi numquam dolores blanditiis odit! Eligendi aut
+                numquam obcaecati tempora magnam.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Expedita tempora delectus saepe similique, commodi, id molestias
+                in doloribus vero eos esse ea a nostrum earum nulla ex
+                voluptatibus modi omnis.
+              </p>
+            </div>
           </div>
+          <hr />
+          <small> &copy; 2022 Copyright - Explore OutDoors!</small>
+        </div>
       </div>
-  
-  </footer>
-  
+    </footer>
 
- 
-
-
-
-
-
-
-
-
-
-
- 
-
-
-     <!--------------- scripts-------------- -->
-     <script src="/enjoy-the-outdoors/scripts/nationalParkData.js"></script>  
-     <script src="/enjoy-the-outdoors/scripts/parkTypeData.js"></script>
-     <script src="/enjoy-the-outdoors/scripts/locationData.js"></script>
-     <script src="/enjoy-the-outdoors/scripts/parks.js"></script>
-     <!-- <script src="/scripts/parkType.js"></script> -->
-    
+    <!--------------- scripts-------------- -->
+    <script src="/enjoy-the-outdoors/scripts/nationalParkData.js"></script>
+    <script src="/enjoy-the-outdoors/scripts/parkTypeData.js"></script>
+    <script src="/enjoy-the-outdoors/scripts/locationData.js"></script>
+    <script src="/enjoy-the-outdoors/scripts/parks.js"></script>
    
-   
-   
-   
-    
   </body>
 </html>

@@ -11,18 +11,7 @@ window.onload = function () {
     locationsArrayList.appendChild(theOption);
   }
 
-  // add an event handler to handle the event on the button
-  function getLocation() {
-    console.log("button works");
-
-    // this sets a variable called stateName that is set to the option/state that the user selected in the dropdown menu
-    let stateName =
-      locationsArrayList.options[locationsArrayList.selectedIndex].text;
-    console.log(locationsArrayList.options[locationsArrayList.selectedIndex]);
-    
-    
-    return stateName;
-  }
+ 
 
   //event listener ---
   locationsArrayList.onchange = onStateChanged;
@@ -30,15 +19,12 @@ window.onload = function () {
   locationList.onchange = () => {
     tableBody.innerHTML = "";
     console.log(tableBody.innerHTML);
-
-  }
-
-
+  };
 
   // event handler
   function onStateChanged() {
     matching = [];
-    
+
     console.log("change event handler works");
     let selectedState = locationsArrayList.value;
 
@@ -64,20 +50,15 @@ window.onload = function () {
     for (let i = 0; i < locationsLength; i++) {
       if (nationalParksArray[i].State == getState) {
         matching.push(nationalParksArray[i]);
-       
       }
-     
     }
     // console.log(matching);
-   
-
-   
 
     let table = document.getElementById("tableBody");
     for (let i = 0; i < matching.length; i++) {
       let tr = document.createElement("tr");
       let td1 = document.createElement("td");
-      td1.innerText = matching[i].LocationID;
+      td1.innerText = matching[i].LocationID.toUpperCase();
       tr.appendChild(td1);
       let td2 = document.createElement("td");
       td2.innerText = matching[i].LocationName;
@@ -113,23 +94,9 @@ window.onload = function () {
       td12.innerText = matching[i].Location.type;
       tr.appendChild(td12);
       table.appendChild(tr);
-      
     }
 
     console.log(matching);
-
-    // let itemToDelete = matching;
-    // console.log(itemToDelete); // this is the park chosen from the list
-    
-    // let numberOfOptionTags = locationsArrayList.options.length; // length of the park array
-    // for (let i = 0; i < numberOfOptionTags; i++) {
-    //     // console.log(locationsArrayList.options[i].value);
-    //   if (matching == itemToDelete) {
-       
-    //     [locationsArrayList.selectedIndex].remove(i);
-
-    //   }
-    // }
     return matching;
   }
 
@@ -137,8 +104,7 @@ window.onload = function () {
 
   // declare the html elements that we need
   const locationsNameList = document.getElementById("parksTypesList");
-  
-   
+
   // console.log(`the select state is ${locationsNameList}`);
 
   let Arraylength = parkTypesArray.length;
@@ -147,28 +113,15 @@ window.onload = function () {
     let theOption = new Option(parkTypesArray[i]);
     locationsNameList.appendChild(theOption);
   }
-  // add an event handler to handle the event on the button
-  function getParkType() {
-    console.log("button works");
 
-    let parkType =
-      locationsNameList.options[locationsNameList.selectedIndex].text;
-    console.log(locationsNameList.options[locationsNameList.selectedIndex]);
-    console.log(` you selected ${parkType}`);
-    return parkType;
-  }
-  //event listener ---
-  locationsNameList.onchange = onParkChanged;
- 
   // event handler
   function onParkChanged() {
     console.log("change event handler works");
-    let selectedPark = locationsNameList.value; 
-    
-        tableBody.innerHTML = "";
-        console.log(tableBody.innerHTML);
-    
-    
+    let selectedPark = locationsNameList.value;
+
+    tableBody.innerHTML = "";
+    console.log(tableBody.innerHTML);
+
     console.log(`you changed your parks to ${selectedPark}`);
     return selectedPark;
   }
@@ -189,11 +142,11 @@ window.onload = function () {
       arrayValueType.LocationName.includes(getParks)
     );
     console.log(findLocationName);
-    let table = document.getElementById('tableBody')
+    let table = document.getElementById("tableBody");
     for (let i = 0; i < findLocationName.length; i++) {
       let tr = document.createElement("tr");
       let td1 = document.createElement("td");
-      td1.innerText = findLocationName[i].LocationID;
+      td1.innerText = findLocationName[i].LocationID.toUpperCase();
       tr.appendChild(td1);
       let td2 = document.createElement("td");
       td2.innerText = findLocationName[i].LocationName;
