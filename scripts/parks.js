@@ -11,8 +11,6 @@ window.onload = function () {
     locationsArrayList.appendChild(theOption);
   }
 
- 
-
   //event listener ---
   locationsArrayList.onchange = onStateChanged;
 
@@ -45,7 +43,6 @@ window.onload = function () {
   function getNationalParks() {
     let getState = onStateChanged();
     console.log(`get state is working ${getState}`);
-    // let matching = [];
     let locationsLength = nationalParksArray.length;
     for (let i = 0; i < locationsLength; i++) {
       if (nationalParksArray[i].State == getState) {
