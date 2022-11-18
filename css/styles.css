@@ -4,7 +4,6 @@ main{
 }
 header{
     background-color: rgb(110, 197, 110);
-
     font-family: Arial, Helvetica, sans-serif;
 }
 h1{
@@ -36,6 +35,21 @@ nav{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+  }
+  select{
+    margin-left: 10px;
+    padding: 3px;
+  }
+  .button {
+    background-color: #4CAF50; 
+    border: #010101;
+    border-radius: 4px;
+    color: white;
+    padding: 4px 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
   }
   fieldset{
     display: flex;
@@ -73,10 +87,7 @@ margin-bottom: 20px;
     width: 180px;
     margin-bottom: 20px;
 }
- .footer-col-3{
-    flex-basis: 12%;
-    text-align: center;
-}
+ 
 ul{
     list-style-type: none;
     color: #010101;
@@ -97,4 +108,14 @@ ul{
 }
   
   
-
+#tableImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+}
+/* table{
+    
+        padding: 15px;
+        text-align: left;
+      
+} */

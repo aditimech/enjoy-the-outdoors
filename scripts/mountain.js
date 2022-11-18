@@ -47,6 +47,15 @@ window.onload = function () {
       }
       console.log(matching);
     }
+
+//function that can "fetch" the sunrise/sunset times
+async function getSunsetForMountain(lat, lng){
+ let response = await fetch(
+ `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`);
+ let data = await response.json();
+ return data;
+}
+
     let table = document.getElementById("tableBody");
     for (let i = 0; i < arrayLength; i++) {
       let tr = document.createElement("tr");
@@ -70,9 +79,24 @@ window.onload = function () {
       tr.appendChild(td7);
       let td8 = document.createElement("td");
       let img8 = document.createElement("img")
-      img8.src = `/images/${matching[i].img}` 
+      img8.src = `/enjoy-the-outdoors/images/${matching[i].img}`
+      img8.id = `tableImage`
       td8.appendChild(img8)
       tr.appendChild(td8);
+      getSunsetForMountain(matching[i].coords.lat, matching[i].coords.lng).then(data => {
+        console.log(data.results.sunrise)
+        let td9 = document.createElement("td");
+        td9.innerText = data.results.sunrise;
+        tr.appendChild(td9);
+        let td10 = document.createElement("td");
+        td10.innerText = data.results.sunset;
+        tr.appendChild(td10);
+        
+
+       });
+
+
+
       table.appendChild(tr);
     }
   }
